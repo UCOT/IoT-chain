@@ -1,0 +1,12 @@
+To enable third-party wallet to use our IoT chain, you are required to do following configurations:
+1. Use our official RPC address and port: 13.250.187.80:9000
+2. Change the chain id to 957 (*This step is essential to avoid double spend)
+
+How to use third-party wallet to send transactions to our IoT chain?
+1. Have a UCoT blockchain account, we are ethereum-based, so it has the same format as ethereum account; 
+2. Use private key and our chain id to sign a transaction(*You must enter correct chain id, otherwise transaction will be discard);
+3. Broadcast to the RPC port,you can use web3 to do this, example:
+web3.eth.sendRawTransaction('0x' + serializedTx.toString('hex'), function(err, hash) {
+ if (!err)
+   console.log(hash); 
+});;
